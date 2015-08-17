@@ -6,7 +6,6 @@
       @list_id = attributes.fetch(:list_id)
     end
 
-
     define_method(:==) do |another_task|
       self.description().==(another_task.description()).&(self.list_id().==(another_task.list_id()))
     end
@@ -22,13 +21,7 @@
        tasks
      end
 
-
-  define_method(:save) do
-    DB.exec("INSERT INTO tasks (description, list_id) VALUES ('#{@description}', #{@list_id});")
-  end
-
-       #
-      #  define_method(:save) do
-      #    DB.exec("INSERT INTO tasks (description, list_id) VALUES ('#{@description}', #{@list_id});")
-      #  end
+    define_method(:save) do
+      DB.exec("INSERT INTO tasks (description, list_id) VALUES ('#{@description}', #{@list_id});")
+    end
   end

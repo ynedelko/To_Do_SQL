@@ -7,7 +7,6 @@ require('spec_helper')
       end
     end
 
-
   describe("#name") do
     it("tells you its name") do
       list = List.new({:name => "Epicodus Stuff", :id => nil})
